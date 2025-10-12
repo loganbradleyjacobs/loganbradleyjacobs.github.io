@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Logan Bradley Jacobs"
+title: "Projects Home"
 ---
 
 Welcome to my project blog!  
