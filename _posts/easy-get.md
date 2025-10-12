@@ -1,0 +1,6 @@
+---
+title: "My First Project"
+date: 2025-10-12
+---
+
+This is a quick write-up about "Easy-Get", a crackme found [here.](https://crackmes.one/crackme/5b52f6eb33c5d41c0b8ae55f)
