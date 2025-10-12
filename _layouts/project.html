@@ -5,9 +5,8 @@ layout: post
 <article class="post">
   <header class="post-header">
     <p class="post-meta">
-      {{ page.date | date: "%B %d, %Y" }}
       {% if page.tags %}
-        | Tags:
+        Tags:
         {% for tag in page.tags %}
           <span style="background:#eee; border-radius:6px; padding:2px 6px; margin-right:4px;">{{ tag }}</span>
         {% endfor %}
