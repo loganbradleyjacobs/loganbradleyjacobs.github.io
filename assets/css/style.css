@@ -36,7 +36,7 @@ html.dark .post-thumbnail img {
 
 html.dark .post-meta span,
 html.dark .tags .tag {
-  background: #333 !important;
-  color: #ddd !important;
+  background: #333;
+  color: #ddd;
   border: 1px solid #444
 };
