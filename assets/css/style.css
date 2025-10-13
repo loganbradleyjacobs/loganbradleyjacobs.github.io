@@ -60,7 +60,6 @@ html.dark .tags .tag {
 
 /* Hover state */
 html.dark .post-tag:hover,
-html.dark .tag:hover,
 html.dark .tags a:hover,
 html.dark .post-meta .tag:hover,
 html.dark .post-meta span:hover,
@@ -68,6 +67,11 @@ html.dark .tags .tag:hover {
   background-color: #444 !important;
   border-color: #666 !important;
   color: #fff !important;
+}
+
+html.dark .tag:hover {
+  background-color: #444 !important;
+  border-color: #666 !important;
 }
 
 /* Inline code in dark mode */
@@ -89,8 +93,13 @@ html.dark kbd {
   display: inline-block;
   margin-bottom: 4px;
   color: #333;
+  text-decoration: none;
 }
 
 .home-page-content {
   /* This ensures proper content display */
+}
+
+html {
+  scroll-behavior: smooth;
 }
