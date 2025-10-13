@@ -4,17 +4,37 @@ layout: post
 
 <article class="post">
   <header class="post-header">
+    {% if page.thumbnail %}
+    <img
+      src="{{ page.thumbnail }}"
+      alt="{{ page.title }} thumbnail"
+      style="
+        display: block;
+        margin: 0 auto 1.5rem;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      "
+    />
+    {% endif %}
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
     <p class="post-meta">
-      {% if page.tags %}
-        Tags:
-        {% for tag in page.tags %}
-          <span style="background:#eee; border-radius:6px; padding:2px 6px; margin-right:4px;">{{ tag }}</span>
-        {% endfor %}
-      {% endif %}
+      {{ page.date | date: "%B %d, %Y" }} {% if page.tags %} | Tags: {% for tag
+      in page.tags %}
+      <span
+        style="
+          background: #eee;
+          border-radius: 6px;
+          padding: 2px 6px;
+          margin-right: 4px;
+        "
+        >{{ tag }}</span
+      >
+      {% endfor %} {% endif %}
     </p>
   </header>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+  <div class="post-content">{{ content }}</div>
 </article>
