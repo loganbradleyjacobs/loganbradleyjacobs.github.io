@@ -14,16 +14,29 @@ html.dark .site-footer {
   border-color: #333;
 }
 
-html.dark pre, html.dark code {
+html.dark pre, 
+html.dark code,
+html.dark .highlight {
   background-color: #2a2a2a;
   color: #d6d6d6;
 }
+
+html.dark .highlight .k { color: #c792ea; }    /* keywords */
+html.dark .highlight .s { color: #a5e075; }    /* strings */
+html.dark .highlight .n { color: #e6e6e6; }    /* normal text */
+html.dark .highlight .c { color: #7f848e; }    /* comments */
+html.dark .highlight .o { color: #89ddff; }    /* operators */
+html.dark .highlight .p { color: #89ddff; }    /* punctuation */
+html.dark .highlight .nf { color: #82aaff; }   /* function names */
+
 
 html.dark .post-thumbnail img {
   filter: brightness(0.9);
 }
 
-html.dark .post-meta span {
-  background: #333;
-  color: #ddd;
-}
+html.dark .post-meta span,
+html.dark .tags .tag {
+  background: #333 !important;
+  color: #ddd !important;
+  border: 1px solid #444
+};
