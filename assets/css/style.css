@@ -1,3 +1,4 @@
+/* === Dark mode base === */
 html.dark,
 html.dark body {
   background-color: #1c1c1c;
@@ -14,13 +15,15 @@ html.dark .site-footer {
   border-color: #333;
 }
 
-html.dark pre, 
+/* Code blocks */
+html.dark pre,
 html.dark code,
 html.dark .highlight {
-  background-color: #2a2a2a;
-  color: #d6d6d6;
+  background-color: #2a2a2a !important;
+  color: #d6d6d6 !important;
 }
 
+/* Syntax tweaks */
 html.dark .highlight .k { color: #c792ea; }    /* keywords */
 html.dark .highlight .s { color: #a5e075; }    /* strings */
 html.dark .highlight .n { color: #e6e6e6; }    /* normal text */
@@ -29,36 +32,50 @@ html.dark .highlight .o { color: #89ddff; }    /* operators */
 html.dark .highlight .p { color: #89ddff; }    /* punctuation */
 html.dark .highlight .nf { color: #82aaff; }   /* function names */
 
-
+/* Thumbnail dim */
 html.dark .post-thumbnail img {
   filter: brightness(0.9);
 }
 
+/* === Tag pills: strong, cross-theme selectors ===
+   Target multiple possible markup patterns used by themes:
+   - .post-tag (common)
+   - .tag or .tags a (links inside a .tags container)
+   - .post-meta span (your earlier selector)
+*/
+html.dark .post-tag,
+html.dark .tag,
+html.dark .tags a,
+html.dark .post-meta .tag,
 html.dark .post-meta span,
 html.dark .tags .tag {
-  background: #333;
-  color: #ddd;
-  border: 1px solid #444
-};
-
-/* Light mode tags */
-.post-tag {
-  background-color: #f0f0f0;
-  color: #333;
-  border-radius: 5px;
-  padding: 2px 6px;
-  font-size: 0.85em;
-  margin-left: 4px;
+  background-color: #333 !important;
+  color: #eaeaea !important;
+  border: 1px solid #444 !important;
+  border-radius: 6px !important;
+  padding: 2px 8px !important;
+  margin-left: 6px !important;
+  text-decoration: none !important;
 }
 
-/* Dark mode override */
-body.dark-mode .post-tag {
-  background-color: #333; /* darker background for contrast */
-  color: #f8f8f8;         /* light text */
-  border: 1px solid #555; /* subtle border to make edges visible */
+/* Hover state */
+html.dark .post-tag:hover,
+html.dark .tag:hover,
+html.dark .tags a:hover,
+html.dark .post-meta .tag:hover,
+html.dark .post-meta span:hover,
+html.dark .tags .tag:hover {
+  background-color: #444 !important;
+  border-color: #666 !important;
+  color: #fff !important;
 }
 
-body.dark-mode .post-tag:hover {
-  background-color: #444;
-  border-color: #666;
+/* Inline code in dark mode */
+html.dark code,
+html.dark kbd {
+  background-color: #2b2b2b !important;
+  color: #f1f1f1 !important;
+  padding: 0.15rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.95em;
 }
