@@ -5,17 +5,21 @@ layout: post
 <article class="post">
   <header class="post-header">
     {% if page.thumbnail %}
-    <img
-      src="{{ page.thumbnail }}"
-      alt="{{ page.title }} thumbnail"
-      style="
-        display: block;
-        margin: 0 auto 0.5rem;
-        max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      "
-    />
+    <div
+      class="post-thumbnail"
+      style="text-align: center; margin-bottom: 1.5em"
+    >
+      <img
+        src="{{ page.thumbnail | relative_url }}"
+        alt="{{ page.title }} thumbnail"
+        style="
+          width: 100%;
+          max-width: 800px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        "
+      />
+    </div>
     {% endif %}
   </header>
 
