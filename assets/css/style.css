@@ -79,3 +79,18 @@ html.dark kbd {
   border-radius: 4px;
   font-size: 0.95em;
 }
+
+.tag {
+  background: #eee;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-right: 4px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.home-page-content {
+  /* This ensures proper content display */
+}
