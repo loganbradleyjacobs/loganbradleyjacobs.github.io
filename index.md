@@ -27,7 +27,7 @@ title: "Projects Home"
         {% if post.tags %}
         <div style="margin-top:0.5rem;">
           {% for tag in post.tags %}
-          <a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          <a href="{{ '/tags/#' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
           {% endfor %}
         </div>
         {% endif %}
