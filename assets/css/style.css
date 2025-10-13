@@ -1,0 +1,29 @@
+html.dark,
+html.dark body {
+  background-color: #1c1c1c;
+  color: #eaeaea;
+}
+
+html.dark a {
+  color: #9dc1ff;
+}
+
+html.dark .site-header,
+html.dark .site-footer {
+  background-color: #121212;
+  border-color: #333;
+}
+
+html.dark pre, html.dark code {
+  background-color: #2a2a2a;
+  color: #d6d6d6;
+}
+
+html.dark .post-thumbnail img {
+  filter: brightness(0.9);
+}
+
+html.dark .post-meta span {
+  background: #333;
+  color: #ddd;
+}

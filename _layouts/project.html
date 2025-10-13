@@ -1,27 +1,30 @@
 ---
-layout: post
+layout: default
 ---
 
 <article class="post">
   <header class="post-header">
-    {% if page.thumbnail %}
-    <div
-      class="post-thumbnail"
-      style="text-align: center; margin-bottom: 1.5em"
-    >
-      <img
-        src="{{ page.thumbnail | relative_url }}"
-        alt="{{ page.title }} thumbnail"
-        style="
-          width: 100%;
-          max-width: 800px;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        "
-      />
-    </div>
-    {% endif %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      {{ page.date | date: "%B %d, %Y" }}
+      {% if page.tags %}
+        | Tags:
+        {% for tag in page.tags %}
+          <span style="background:#eee; border-radius:6px; padding:2px 6px; margin-right:4px;">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </p>
   </header>
 
-  <div class="post-content">{{ content }}</div>
+  {% if page.thumbnail %}
+    <div class="post-thumbnail" style="text-align:center; margin-bottom: 1.5em;">
+      <img src="{{ page.thumbnail | relative_url }}"
+           alt="{{ page.title }} thumbnail"
+           style="width:100%; max-width:800px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+    </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
 </article>
