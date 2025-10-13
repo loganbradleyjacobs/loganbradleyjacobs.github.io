@@ -8,14 +8,8 @@ layout: default
     <p class="post-meta">
       {{ page.date | date: "%B %d, %Y" }} {% if page.tags %} | Tags: {% for tag
       in page.tags %}
-      <span
-        style="
-          background: #eee;
-          border-radius: 6px;
-          padding: 2px 6px;
-          margin-right: 4px;
-        "
-        >{{ tag }}</span
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag"
+        >{{ tag }}</a
       >
       {% endfor %} {% endif %}
     </p>
