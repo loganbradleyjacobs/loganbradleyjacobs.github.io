@@ -21,6 +21,23 @@ title: "Projects Home"
         {{ post.date | date: "%B %d, %Y" }}
       </p>
       <p>{{ post.excerpt }}</p>
+      <!-- Tags section -->
+      {% if post.tags %}
+      <div style="margin-top:0.5rem;">
+        {% for tag in post.tags %}
+        <span style="
+          background:#eee; 
+          border-radius:6px; 
+          padding:2px 6px; 
+          margin-right:4px;
+          font-size:0.8rem;
+          display:inline-block;
+          margin-bottom:4px;
+        ">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
     </div>
   </li>
   {% endfor %}
