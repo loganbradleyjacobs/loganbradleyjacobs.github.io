@@ -47,6 +47,10 @@ So, we define the buffer, and pass it and its length to fgets, also error checki
 
 <img src="/assets/img/sys-II-shell-lab-code-1.png" alt="Code 1" class="project-image-code">
 
+As you can see, there are a few other things I needed to include to make the behavior as safe as I could. Also, don't mind the writeLog() call. When doing this project on my own, I realized how useful it was to have a logfile so I could trace back the shell's behavior when it went wrong.
 
+Now though, we have input from the user, but we need to parse it into something useful. This can be done by a string tokenization function called `strtok`. However, we need to tokenize by 2 delimiters: first by separating the commands from each other (delimited by `|`), and second separating the tokens from each other within each command (delimited by ` `). With this pattern, it is probably easier to use `strtok_r`, another niche tokenization function that does the same thing as `strtok` but is passed an extra pointer to keep it from executing some odd behavior. You can read more [here](https://systems-encyclopedia.cs.illinois.edu/articles/c-strtok/).
+
+<img src="/assets/img/sys-II-shell-lab-code-2.png" alt="Code 1" class="project-image-code">
 
 
