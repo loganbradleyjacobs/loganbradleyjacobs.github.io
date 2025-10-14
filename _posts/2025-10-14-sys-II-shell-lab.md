@@ -21,6 +21,6 @@ Lastly, processes need to `wait()` when they are parents. `wait()` pauses execut
 
 Below is a diagram of process structure in Unix. You can see the different sections of the process, and the U-Area previously mentioned. This image is from the course slides, Chp 2, slide 24.
 
-![[assets/img/sys-II-shell-lab-process-structure.png]]
+![Process Structure](assets/img/sys-II-shell-lab-process-structure.png)
 
 ## Assignment
