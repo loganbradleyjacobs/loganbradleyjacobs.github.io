@@ -24,3 +24,29 @@ Below is a diagram of process structure in Unix. You can see the different secti
 <img src="/assets/img/sys-II-shell-lab-process-structure.png" alt="Process Structure" class="project-image">
 
 ## Assignment
+
+In this assignment, we are tasked with creating a shell that can handle a line like: 
+```
+command [indentifier[identifier]]
+```
+and parse argv from that. We can then use `execvp()` to execute the file that contains the command. Then, `execvp()` will search for that file in the paths specified by the `$PATH` environment variable. 
+
+We also need to handle if the last token in the command is the `&` operator, which means that the command should be executed concurrently rather than the shell waiting for the command to terminate before prompting the user again.
+
+The shell is to be in a loop that only exits if the user enters 'exit'. `SIG_INT`, aka Ctrl-C should not interrupt the shell either. We also should return error messages if `execvp()` cannot execute. 
+
+Lastly, we need to include pipes. Pipes are a way that two processes can communicate with one another. If I was to type `ls | grep "test"` into my terminal, that means the `ls` command's output should go into the `grep "test"` command's input. We also know that the maximum number of pipes is 2, per the assignment's requirements. With that, we are able to start implementing.
+
+## The Code
+
+Firstly, since the shell needs to be in a loop, lets get a main function that has an infinite loop in it, that prints a prompt, and gets user input. We'll have to `#include <stdio.h>` as we want to print to the terminal. We could use write calls, but if we always call `fflush(stdout)`, then we can use `printf`'s formatting with the same basic functionality, and without the headache that comes from `fork()`ing processes that still have characters in their stdout buffer. We can also use ANSI escape codes to deal with formatting.
+
+After we prompt the user, we need to take input, and an easy way to do that is to use `fgets()`. `fgets()` expects a buffer to be passed into it to hold what it reads as input. This means that we need to set a maximum buffer size, or get clever and dynamically allocate memory. Right now, lets get something up and running, so we'll decide that the maximum input buffer size is 255 characters, and the maximum number of tokens in each command will be 20. Since the maximum amount of pipes is 2, we can also say the maximum number of commands is 3. 
+
+So, we define the buffer, and pass it and its length to fgets, also error checking as we do so. We null terminate the input, and return. Now we have a program that loops, each time presenting a prompt and taking input and putting it in a buffer. My code looked like this:
+
+<img src="/assets/img/sys-II-shell-lab-code-1.png" alt="Code 1" class="project-image">
+
+
+
+
