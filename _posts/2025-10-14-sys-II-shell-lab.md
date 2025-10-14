@@ -75,5 +75,4 @@ Lastly, without `^C` to exit the program, we would need to handle our alternativ
 
 Below is the final code for these specifications of the lab. There are optional pieces to the assignment I haven't introduced yet, such as a working `history` command, and using the up and down arrow keys to control that command.
 
-
 <img src="/assets/img/sys-II-shell-lab-code-4.png" alt="Code 4" class="project-image-code">
