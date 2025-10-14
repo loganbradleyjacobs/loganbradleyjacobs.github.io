@@ -23,7 +23,7 @@
     btn.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
       const dark = document.documentElement.classList.contains('dark');
-      btn.textContent = dark ? '☀️' : '🌙';
+      btn.textContent = dark ? 'Click for Light Mode ☀️' : 'Click for Dark Mode 🌙';
       localStorage.setItem('theme', dark ? 'dark' : 'light');
     });
     </script>
