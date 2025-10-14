@@ -5,7 +5,7 @@ title: "Projects Home"
 
 <div class="home-page-content">
   <h1>Projects</h1>
-  <p>Welcome to my project blog! Each post below includes a thumbnail, tags, and short description.</p>
+  <p>Welcome to my project blog! Each post indicates a project or foray, which can by clicking on a tag. Try light/dark mode by clicking the top right of the header.</p>
 
   <ul style="list-style:none; padding:0;">
     {% for post in site.posts %}
