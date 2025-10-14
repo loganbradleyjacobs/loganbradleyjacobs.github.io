@@ -45,7 +45,7 @@ After we prompt the user, we need to take input, and an easy way to do that is t
 
 So, we define the buffer, and pass it and its length to fgets, also error checking as we do so. We null terminate the input, and return. Now we have a program that loops, each time presenting a prompt and taking input and putting it in a buffer. My code looked like this:
 
-<img src="/assets/img/sys-II-shell-lab-code-1.png" alt="Code 1" class="project-image">
+<img src="/assets/img/sys-II-shell-lab-code-1.png" alt="Code 1" class="project-image-code">
 
 
 
