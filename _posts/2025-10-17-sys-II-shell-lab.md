@@ -32,3 +32,8 @@ Here is the function, note the `rewind()` call to reset the file pointer to the 
 
 There was a dilemma I uncovered while thinking about where to put the call of this function. I could implement `history` like I did `exit`, as a builtin executed by the parent. However, this limits the shell, as it cannot pipe the results of `history` to anywhere else. If I instead insert it when processes are being delegated, however, I can simply execute the builtin instead of allowing the execvp call to take the argument if it is equal to "history". This way, pipes retain their functionality.
 
+Next, the `erase history` command needs to be implemented. First I'll design a function to erase the `.myhistory` file, and then I'll decide where to call it from. Opening the file in write mode (with `fopen` and `w`) clears the content of the file automatically. The file descriptor is in `a+` mode under normal circumstances, so to erase the contents, we can close it, open it again in `w` mode, close it again, and open it back in `a+` mode.
+
+<img src="/assets/img/sys-II-shell-lab-2-eraseHistory.png" alt="History Erasing Function" class="project-image-code">
+
+I call this function in the `delegateProcesses()` stage, and simply don't `fork()` or `exec()` in the case I recieve "erase history".
