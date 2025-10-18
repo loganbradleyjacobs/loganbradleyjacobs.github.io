@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Systems II Shell Lab"
+title: "Systems II Shell Lab (Pt 1)"
 date: 2025-10-14
 tags: [Operating Systems, Shell, School]
 excerpt: "A simple shell, complete with pipes, that I'm working on for my CSC 251 class at WFU."
