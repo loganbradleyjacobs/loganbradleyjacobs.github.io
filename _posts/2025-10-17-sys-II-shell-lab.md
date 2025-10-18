@@ -42,4 +42,12 @@ The last thing I need to do in terms of the history file is implement a maximum 
 
 When I start the shell, I can read the `.myhistory` file, and fill the circular buffer with those values. Since the `.myhistory` file will have less than MAX_HISTORY lines, if the buffer is of size MAX_HISTORY, it should fit. Because the buffer is circular, as long as I manage the head and tail pointers, the behavior of the buffer should be perfect for the behavior I want. If a new item is added in any case, I move the head pointer 1 item forward. If a new item is added, but I have no space left, the same thing happens, and it simply overwrites the oldest item. When exiting, I can write the circular buffer back to the `.myhistory` file, and all is well.
 
+I had to fix a few bugs, but it now works. I ended up having to test my history-related functions in a separate file, where I was just testing the adding, writing and erasing of the circular buffer. Here are the updated history functions:
 
+<img src="/assets/img/sys-II-shell-lab-2-historyFunctions.png" alt="History Functions" class="project-image-code">
+
+And I call them in the following functions:
+
+<img src="/assets/img/sys-II-shell-lab-2-newDelegateProcesses.png" alt="New Delegate Processes Function" class="project-image-code">
+
+<img src="/assets/img/sys-II-shell-lab-2-newHistoryCalls.png" alt="New History Calls" class="project-image-code">
