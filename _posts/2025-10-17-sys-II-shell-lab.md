@@ -2,7 +2,7 @@
 layout: project
 title: "Systems II Shell Lab (Pt 2)"
 date: 2025-10-17
-tags: [Operating Systems, Shell, School]
+tags: [Operating Systems, Shell, Programming]
 excerpt: "Adding onto my simple shell with a history file and arrow key functionality."
 thumbnail: /assets/img/filler.png
 ---
@@ -37,3 +37,9 @@ Next, the `erase history` command needs to be implemented. First I'll design a f
 <img src="/assets/img/sys-II-shell-lab-2-eraseHistory.png" alt="History Erasing Function" class="project-image-code">
 
 I call this function in the `delegateProcesses()` stage, and simply don't `fork()` or `exec()` in the case I recieve "erase history".
+
+The last thing I need to do in terms of the history file is implement a maximum size for it defined as `MAX_HISTORY`. I was hoping that there would be an efficient way to remove the first line of a file, and simply do that and append when there were `MAX_HISTORY` commands in `.myhistory`, but after looking into it, it seems inefficient and a little messy. The next thing I thought of was a [circular buffer](https://www.youtube.com/watch?v=uvD9_Wdtjtw). 
+
+When I start the shell, I can read the `.myhistory` file, and fill the circular buffer with those values. Since the `.myhistory` file will have less than MAX_HISTORY lines, if the buffer is of size MAX_HISTORY, it should fit. Because the buffer is circular, as long as I manage the head and tail pointers, the behavior of the buffer should be perfect for the behavior I want. If a new item is added in any case, I move the head pointer 1 item forward. If a new item is added, but I have no space left, the same thing happens, and it simply overwrites the oldest item. When exiting, I can write the circular buffer back to the `.myhistory` file, and all is well.
+
+
