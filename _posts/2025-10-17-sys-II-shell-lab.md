@@ -44,10 +44,10 @@ When I start the shell, I can read the `.myhistory` file, and fill the circular 
 
 I had to fix a few bugs, but it now works. I ended up having to test my history-related functions in a separate file, where I was just testing the adding, writing and erasing of the circular buffer. Here are the updated history functions:
 
-<img src="/assets/img/sys-II-shell-lab-2-historyFunctions.png" alt="History Functions" class="project-image-code">
+<img src="/assets/img/sys-II-shell-lab-2-historyFunctions.png" alt="History Functions" class="project-image">
 
 And I call them in the following functions:
 
-<img src="/assets/img/sys-II-shell-lab-2-newDelegateProcesses.png" alt="New Delegate Processes Function" class="project-image-code">
+<img src="/assets/img/sys-II-shell-lab-2-newDelegateProcesses.png" alt="New Delegate Processes Function" class="project-image">
 
-<img src="/assets/img/sys-II-shell-lab-2-newHistoryCalls.png" alt="New History Calls" class="project-image-code">
+<img src="/assets/img/sys-II-shell-lab-2-newHistoryCalls.png" alt="New History Calls" class="project-image">
