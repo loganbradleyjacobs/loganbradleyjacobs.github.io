@@ -9,7 +9,7 @@ thumbnail: /assets/img/sys-II-shell-lab-2.png
 
 # Recap
 
-[When I last left off,](https://loganbradleyjacobs.github.io/2025/10/14/sys-II-shell-lab.html) I had finished implementing a simple shell, complete with `exec`ing commands, piping between processes, control character handling, background processing and more. Today I will add a history file, and enable the user to traverse through the history file with the arrow keys. I will also enable clearing the history file, and set a cap on how many commands will be stored in history.
+[When I last left off,](https://loganbradleyjacobs.github.io/2025/10/14/sys-II-shell-lab.html) I had finished implementing a simple shell, complete with `exec`ing commands, piping between processes, control character handling, background processing and more. Today I will add a history file, and enable the user to traverse through the history file with the arrow keys. I will also enable clearing the history file, and set a cap on how many c ommands will be stored in history.
 
 # Specifications
 
