@@ -77,64 +77,64 @@ Minus some considerations for bugs I had, this is my shell. It's not perfect, bu
 
 # Sources:
 - ## Input Processing
-	- `strtok` w3 schools https://www.w3schools.com/c/ref_string_strtok.php
+	- [- `strtok` w3 schools](https://www.w3schools.com/c/ref_string_strtok.php)
 		- strtok acting weird
-			- strtok_r vs strtok https://systems-encyclopedia.cs.illinois.edu/articles/c-strtok/
-	- format prompt https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
-		- hex rgb to ansi converter https://github.com/v-amorim/hex_to_ansi
+			- [- strtok_r vs strtok](https://systems-encyclopedia.cs.illinois.edu/articles/c-strtok/)
+	- [- format prompt](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
+		- [- hex rgb to ansi converter](https://github.com/v-amorim/hex_to_ansi)
 	- null terminating
-		- `strcspn` https://cplusplus.com/reference/cstring/strspn/
-	- stripping spaces https://stackoverflow.com/questions/1726302/remove-spaces-from-a-string-in-c
+		- [- `strcspn`](https://cplusplus.com/reference/cstring/strspn/)
+	- [- stripping spaces](https://stackoverflow.com/questions/1726302/remove-spaces-from-a-string-in-c)
 	- stripping quotes
-		- `memmove` https://man7.org/linux/man-pages/man3/memmove.3.html
+		- [- `memmove`](https://man7.org/linux/man-pages/man3/memmove.3.html)
 	- logging errors
-		- opening file flags https://stackoverflow.com/questions/28466715/using-open-to-create-a-file-in-c
-		- using fopen instead because it works with fprintf https://man7.org/linux/man-pages/man3/fopen.3.html
-		- using dprinf instead of fprintf because unbuffered https://linux.die.net/man/3/dprintf
-			- weird behavior fix: https://stackoverflow.com/questions/1716296/why-does-printf-not-flush-after-the-call-unless-a-newline-is-in-the-format-strin
+		- [- opening file flags](https://stackoverflow.com/questions/28466715/using-open-to-create-a-file-in-c)
+		- [- using fopen instead because it works with fprintf](https://man7.org/linux/man-pages/man3/fopen.3.html)
+		- [- using dprinf instead of fprintf because unbuffered](https://linux.die.net/man/3/dprintf)
+			- [- weird behavior fix](https://stackoverflow.com/questions/1716296/why-does-printf-not-flush-after-the-call-unless-a-newline-is-in-the-format-strin)
 		- trying to modularize code
-			- variadic functions https://en.cppreference.com/w/c/variadic.html
+			- [- variadic functions](https://en.cppreference.com/w/c/variadic.html)
 - ## Input Handling
-	- exec family https://www.geeksforgeeks.org/c/exec-family-of-functions-in-c/
+	- [- exec family](https://www.geeksforgeeks.org/c/exec-family-of-functions-in-c/)
 - ## Signal Handling
-	- ignoring `^C` https://stackoverflow.com/questions/32708086/ignoring-signals-in-parent-process
-	- not having `"^C"` come up after ignoring `SIGINT` https://stackoverflow.com/questions/608916/ignoring-ctrl-c
-	- restoring default signal handling in children https://thelinuxcode.com/signal_handlers_c_programming_language/
-	- signalPressed flag https://en.cppreference.com/w/c/program/sig_atomic_t
+	- [- ignoring `^C`](https://stackoverflow.com/questions/32708086/ignoring-signals-in-parent-process)
+	- [- not having `"^C"` come up after ignoring `SIGINT`](https://stackoverflow.com/questions/608916/ignoring-ctrl-c)
+	- [- restoring default signal handling in children](https://thelinuxcode.com/signal_handlers_c_programming_language/)
+	- [- signalPressed flag](https://en.cppreference.com/w/c/program/sig_atomic_t)
 - ## Pipe Handling
-	- compound literals https://en.cppreference.com/w/c/language/compound_literal.html
+	- [- compound literals](https://en.cppreference.com/w/c/language/compound_literal.html)
 - ## Arrow Key Detection
-	- Someone doing it in bash: https://stackoverflow.com/questions/79416101/bash-arrow-key-detection-in-real-time
-		- `stty raw -echo` https://stackoverflow.com/questions/22832933/what-does-stty-raw-echo-do-on-os-x
-			- `man stty` https://www.man7.org/linux/man-pages/man1/stty.1.html
+	- [- Someone doing it in bash](https://stackoverflow.com/questions/79416101/bash-arrow-key-detection-in-real-time)
+		- [- `stty raw -echo`](https://stackoverflow.com/questions/22832933/what-does-stty-raw-echo-do-on-os-x)
+			- [- `man stty`](https://www.man7.org/linux/man-pages/man1/stty.1.html)
 		- `trap cleanup EXIT`
-			- `trap` https://ss64.com/bash/trap.html
+			- [- `trap`](https://ss64.com/bash/trap.html)
 		- `if IFS= read -r -t 0.1 -n 3 keypress; then`
 			- `IFS=`"sets the internal field separator to an empty value (use result of read in above)" "no splitting will occur when processing input strings"
-			- `read` https://linuxize.com/post/bash-read/
-			- `man read` https://ss64.com/bash/read.html
+			- [- `read`](https://linuxize.com/post/bash-read/)
+			- [- `man read`](https://ss64.com/bash/read.html)
 		- `$'\e[A') echo "Up Arrow! ;;`
 			- `\e[A`
-				- why does it happen https://stackoverflow.com/questions/21384040/why-does-the-terminal-show-a-b-c-d-when-pressing-the-arrow-k
-				- recognizing arrow keys with stdin https://stackoverflow.com/questions/4130048/recognizing-arrow-keys-with-stdin
-				- ansi escape codes (explains `\[` and `[A` are meaningful) https://en.wikipedia.org/wiki/ANSI_escape_code
-	- Someone with a better solution in comments https://stackoverflow.com/questions/79416101/bash-arrow-key-detection-in-real-time
+				- [- why does it happen](https://stackoverflow.com/questions/21384040/why-does-the-terminal-show-a-b-c-d-when-pressing-the-arrow-k)
+				- [- recognizing arrow keys with stdin](https://stackoverflow.com/questions/4130048/recognizing-arrow-keys-with-stdin)
+				- [- ansi escape codes (explains `\[` and `[A` are meaningful)](https://en.wikipedia.org/wiki/ANSI_escape_code)
+	- [- Someone with a better solution in comments](https://stackoverflow.com/questions/79416101/bash-arrow-key-detection-in-real-time)
 		- `test "$c" = q && break` break if `c` is equal to `"q"` 
-			- `test` https://linuxhandbook.com/bash-test-command/
+			- [- `test`](https://linuxhandbook.com/bash-test-command/)
 		- `if test "$state" = 0 -a "$c" = $'\e'; then`
-			- `-a` https://linuxhandbook.com/bash-test-operators/
-	- how to put terminal in raw mode in C https://www.man7.org/linux/man-pages/man3/termios.3.html
-		- `termios.h` https://pubs.opengroup.org/onlinepubs/7908799/xsh/termios.h.html
-	- custom fgets https://codereview.stackexchange.com/questions/202490/dynamic-fgets-in-c
-	- really helpful termios guide https://viewsourcecode.org/snaptoken/kilo/02.enteringRawMode.html
-	- arrow key tips https://viewsourcecode.org/snaptoken/kilo/03.rawInputAndOutput.html
+			- [- `-a`](https://linuxhandbook.com/bash-test-operators/)
+	- [- how to put terminal in raw mode in C](https://www.man7.org/linux/man-pages/man3/termios.3.html)
+		- [- `termios.h`](https://pubs.opengroup.org/onlinepubs/7908799/xsh/termios.h.html)
+	- [- custom fgets](https://codereview.stackexchange.com/questions/202490/dynamic-fgets-in-c)
+	- [- really helpful termios guide](https://viewsourcecode.org/snaptoken/kilo/02.enteringRawMode.html)
+	- [- arrow key tips](https://viewsourcecode.org/snaptoken/kilo/03.rawInputAndOutput.html)
 - ## History
-	- reading file https://www.geeksforgeeks.org/c/c-program-to-read-contents-of-whole-file/
-	- history starts at 1, not 0 https://www.ibm.com/docs/en/aix/7.2.0?topic=shell-history-lists-c
-	- a+ puts pointer at end, i want it at the beginning https://www.geeksforgeeks.org/c/rewind-in-c/
-	- making sure i'm set on opening modes https://stackoverflow.com/questions/1466000/difference-between-modes-a-a-w-w-and-r-in-built-in-open-function
-	- MAX_HISTORY with circular buffer https://www.youtube.com/watch?v=uvD9_Wdtjtw
-	- lets keep the head, tail and history file desc in a struct https://www.w3schools.com/c/c_structs.php
-		- i don't want to type struct out every time https://stackoverflow.com/questions/1675351/typedef-struct-vs-struct-definitions/
-		- initializing struct in setup() https://stackoverflow.com/questions/32698293/assign-values-to-structure-variables
-	- ftruncate instead of opening in w mode? https://www.man7.org/linux/man-pages/man3/ftruncate.3p.html
+	- [- reading file](https://www.geeksforgeeks.org/c/c-program-to-read-contents-of-whole-file/)
+	- [- history starts at 1, not 0](https://www.ibm.com/docs/en/aix/7.2.0?topic=shell-history-lists-c)
+	- [- a+ puts pointer at end, i want it at the beginning](https://www.geeksforgeeks.org/c/rewind-in-c/)
+	- [- making sure i'm set on opening modes](https://stackoverflow.com/questions/1466000/difference-between-modes-a-a-w-w-and-r-in-built-in-open-function)
+	- [- MAX_HISTORY with circular buffer](https://www.youtube.com/watch?v=uvD9_Wdtjtw)
+	- [- lets keep the head, tail and history file desc in a struct](https://www.w3schools.com/c/c_structs.php)
+		- [- i don't want to type struct out every time](https://stackoverflow.com/questions/1675351/typedef-struct-vs-struct-definitions/)
+		- [- initializing struct in setup()](https://stackoverflow.com/questions/32698293/assign-values-to-structure-variables)
+	- [- ftruncate instead of opening in w mode?](https://www.man7.org/linux/man-pages/man3/ftruncate.3p.html)
